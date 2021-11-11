@@ -4,7 +4,7 @@ describe('Name input test', ()=> {
     const emailInput = () => cy.get("[name='email']");
     const passwordInput = () => cy.get("[name='password']");
     const checkInput = () => cy.get("[name='tos']");
-    const submitInput = () => cy.get("[name='submit']")
+    const submitInput = () => cy.get("[id='submit']")
     
     
     it('checks to see if the text inputted contains the name provided', () => {
@@ -19,9 +19,7 @@ describe('Name input test', ()=> {
         checkInput()
             .click()
             .should('be.checked');
-        submitInput()
-            .click()
-            .should()
+        cy.get('form').submit()
 
     })
 })
