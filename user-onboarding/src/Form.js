@@ -20,7 +20,7 @@ const Form = (props) => {
       <p>{errors.password}</p>
       <p>{errors.email}</p>
       <p>{errors.tos}</p>
-      <form onSubmit={submit}>
+      <form onSubmit={onSubmit}>
         <label>
           Name:
           <input 
