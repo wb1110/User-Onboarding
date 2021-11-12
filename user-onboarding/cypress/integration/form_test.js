@@ -7,7 +7,7 @@ describe('Name input test', ()=> {
     const submitInput = () => cy.get("[id='submit']")
     
     
-    it('checks to see if the text inputted contains the name provided', () => {
+    it('checks to see if input works', () => {
         cy.visit('http://localhost:3000/')
         nameInput()
             .type('Will')
@@ -21,5 +21,14 @@ describe('Name input test', ()=> {
             .should('be.checked');
         cy.get('form').submit()
 
+    })
+
+    it('check for form validation', () => {
+        cy.visit('http://localhost:3000/')
+        nameInput()
+            .should('have.value', '')
+            .type('Will')
+            .clear()
+            cy.contains('required')
     })
 })
